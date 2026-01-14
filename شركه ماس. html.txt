@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>شركة ماس</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+  --bg:#f4f6f8;
+  --box:#ffffff;
+  --main:#0b3c5d;
+  --dark:#0f2a3d;
+  --text:#222;
+}
+body.dark{
+  --bg:#121212;
+  --box:#1e1e1e;
+  --main:#1d6fa5;
+  --dark:#000;
+  --text:#eee;
+}
+body{
+  margin:0;
+  font-family:Tahoma,Arial;
+  direction:rtl;
+  background:var(--bg);
+  color:var(--text);
+}
+header{
+  background:var(--main);
+  color:#fff;
+  padding:30px;
+  text-align:center;
+}
+nav{
+  background:var(--dark);
+  padding:10px;
+  text-align:center;
+  position:sticky;
+  top:0;
+}
+nav a, nav button{
+  color:#fff;
+  margin:0 8px;
+  text-decoration:none;
+  background:none;
+  border:none;
+  font-weight:bold;
+  cursor:pointer;
+}
+section{
+  padding:30px 15px;
+}
+.box{
+  background:var(--box);
+  padding:20px;
+  border-radius:8px;
+  margin-bottom:20px;
+}
+.services{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:15px;
+}
+.card{
+  background:var(--bg);
+  padding:15px;
+  border-radius:8px;
+  text-align:center;
+}
+
+/* الصور */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:15px;
+}
+.gallery img{
+  width:100%;
+  border-radius:8px;
+}
+
+/* أزرار ثابتة */
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  left:20px;
+  background:#25d366;
+  color:#fff;
+  padding:14px;
+  border-radius:50%;
+  text-decoration:none;
+  font-size:20px;
+}
+.back-home{
+  position:fixed;
+  bottom:80px;
+  left:20px;
+  background:var(--main);
+  color:#fff;
+  padding:12px;
+  border-radius:50%;
+  text-decoration:none;
+}
+
+footer{
+  background:var(--dark);
+  color:#fff;
+  text-align:center;
+  padding:15px;
+}
+</style>
+</head>
+
+<body id="home">
+
+<header>
+  <h1 id="title">شركة ماس</h1>
+  <p id="subtitle">حلول هندسية ومقاولات متكاملة</p>
+</header>
+
+<nav>
+  <a href="#home" id="navHome">الرئيسية</a>
+  <a href="#about" id="navAbout">من نحن</a>
+  <a href="#services" id="navServices">الخدمات</a>
+  <a href="#gallery" id="navGallery">صور</a>
+  <a href="#contact" id="navContact">تواصل</a>
+  <button onclick="toggleDark()">🌙</button>
+  <button onclick="toggleLang()">🌍</button>
+</nav>
+
+<section id="about">
+  <div class="box">
+    <h2 id="aboutTitle">من نحن</h2>
+    <p id="aboutText">
+      شركة ماس شركة متخصصة في المقاولات والتشطيبات
+      والأعمال الهندسية.
+    </p>
+  </div>
+</section>
+
+<section id="services">
+  <div class="box">
+    <h2 id="servicesTitle">خدماتنا</h2>
+    <div class="services">
+      <div class="card" id="service1">مقاولات عامة</div>
+      <div class="card" id="service2">تشطيبات</div>
+      <div class="card" id="service3">أعمال كهرباء وميكانيكا</div>
+      <div class="card" id="service4">إدارة مشروعات</div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="box">
+    <h2 id="galleryTitle">صور من أعمالنا</h2>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e">
+      <img src="https://images.unsplash.com/photo-1497366216548-37526070297c">
+      <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e">
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="box">
+    <h2 id="contactTitle">تواصل معنا</h2>
+    <p>📞 01229751050</p>
+    <p>التواصل عبر الهاتف أو واتساب فقط</p>
+  </div>
+</section>
+
+<footer>
+  © 2026 شركة ماس
+</footer>
+
+<a href="#home" class="back-home">⬆</a>
+<a href="https://wa.me/201229751050" class="whatsapp">💬</a>
+
+<script>
+function toggleDark(){
+  document.body.classList.toggle("dark");
+}
+
+let ar=true;
+function toggleLang(){
+  ar=!ar;
+  if(ar){
+    document.body.style.direction="rtl";
+    title.innerText="شركة ماس";
+    subtitle.innerText="حلول هندسية ومقاولات متكاملة";
+    navHome.innerText="الرئيسية";
+    navAbout.innerText="من نحن";
+    navServices.innerText="الخدمات";
+    navGallery.innerText="صور";
+    navContact.innerText="تواصل";
+    aboutTitle.innerText="من نحن";
+    aboutText.innerText="شركة ماس شركة متخصصة في المقاولات والتشطيبات والأعمال الهندسية.";
+    servicesTitle.innerText="خدماتنا";
+    galleryTitle.innerText="صور من أعمالنا";
+    contactTitle.innerText="تواصل معنا";
+  } else {
+    document.body.style.direction="ltr";
+    title.innerText="MAS Company";
+    subtitle.innerText="Engineering & Contracting Solutions";
+    navHome.innerText="Home";
+    navAbout.innerText="About";
+    navServices.innerText="Services";
+    navGallery.innerText="Gallery";
+    navContact.innerText="Contact";
+    aboutTitle.innerText="About Us";
+    aboutText.innerText="MAS Company specializes in contracting and engineering works.";
+    servicesTitle.innerText="Our Services";
+    galleryTitle.innerText="Our Projects";
+    contactTitle.innerText="Contact Us";
+  }
+}
+</script>
+
+</body>
+</html>
